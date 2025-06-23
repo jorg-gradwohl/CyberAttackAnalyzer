@@ -1,7 +1,7 @@
-# Cyber Attack Mapper
+# Cyber Attack Analyzer
 
 ## Description
-Cyber Attack Mapper is a simple cybersecurity project that extracts, stores, and analyses network attack data.  
+Cyber Attack Analyzer is a simple cybersecurity project that extracts, stores, and analyses network attack data.  
 It processes large CSV datasets, filters attack records, stores them in a SQLite database, and generates clean summary reports.
 
 This project is ideal for learning and practicing basic cybersecurity data analysis.
@@ -13,7 +13,7 @@ This project is ideal for learning and practicing basic cybersecurity data analy
 | File | Purpose |
 |:-----|:--------|
 | `csv_preview_tool.py` | Quickly preview the structure and sample rows of large CSV files. |
-| `attack_mapper.py` | Parse attack records from a CSV and store them into a local SQLite database (`attacks.db`). |
+| `attack_analyzer.py` | Parse attack records from a CSV and store them into a local SQLite database (`attacks.db`). |
 | `attack_summary.py` | Generate summary reports from the database: top attackers, top attack types, attack timeline, and most targeted ports. |
 
 ---
@@ -40,7 +40,7 @@ python3 csv_preview_tool.py
 
 **Extract attack data into a database:**
 ```bash
-python3 attack_mapper.py
+python3 attack_analyzer.py
 ```
 
 **Analyse the stored attacks:**
@@ -49,7 +49,7 @@ python3 attack_summary.py
 ```
 
 Note:
-- `csv_preview_tool.py` and `attack_mapper.py` will prompt you to enter the CSV filename.
+- `csv_preview_tool.py` and `attack_analyzer.py` will prompt you to enter the CSV filename.
 - `attack_summary.py` will automatically analyse the existing `attacks.db` without asking for inputs.
 
 ---
