@@ -7,7 +7,7 @@ import pandas as pd
 
 # Check if the database file exists
 if not os.path.isfile("attacks.db"):
-    print("Error: 'attacks.db' not found. Please run attack_mapper.py first.")
+    print("Error: 'attacks.db' not found. Please run attack_analyzer.py first.")
     exit(1)
 
 # Connect to existing attacks.db
