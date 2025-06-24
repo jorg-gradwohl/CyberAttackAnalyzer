@@ -41,9 +41,10 @@ rows = cursor.fetchall()
 for ip, count in rows:
     print(f"{ip:<20} {count} attacks")
 
-print("\nTop Attack Types:")
 
 # 2. Top Attack Types
+print("\nTop Attack Types:")
+
 query = """
     SELECT attack_type, COUNT(*) as count
     FROM attacks
@@ -58,20 +59,20 @@ for attack_type, count in rows:
     print(f"{attack_type:<20} {count} occurrences")
 
 # 3. Timeline of Attacks
-print("\nTimeline of Attacks (per hour):")
+print("\nTimeline of Attacks:")
 query = """
     SELECT 
-        SUBSTR(timestamp, 1, 13) AS hour,
+        SUBSTR(timestamp, 1, 13) AS time,
         COUNT(*) as count
     FROM attacks
-    GROUP BY hour
-    ORDER BY hour
+    GROUP BY time
+    ORDER BY time
 """
 cursor.execute(query)
 rows = cursor.fetchall()
 
-for hour, count in rows:
-    print(f"{hour}:00 - {count} attacks")
+for time, count in rows:
+    print(f"{time}:00 - {count} attacks")
 
 
 # 4. Most Targeted Ports
